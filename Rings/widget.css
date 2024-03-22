@@ -1,0 +1,227 @@
+/* VARIABLES */
+:root {
+
+    /* popups */
+    --popup-card-radius: 20px;
+    --popup-card-color: rgb(229, 229, 229);
+    --popup-card-border-width: 3px;
+    --popup-card-font-color: #ffffff;
+    --popup-font-shadow: 0 0 20px rgba(255, 255, 255, 0.55);
+    --popup-animation-speed: 10s;
+    --popup-animation-delay: .5s;
+
+    /* ig popup */
+    --ig-popup-width: 250px;
+    --ig-popup-height: 100px;
+    --ig-popup-font-size: 30px;
+
+    /* dc popup */
+    --dc-popup-width: 225px;
+    --dc-popup-height: 100px;
+    --dc-popup-font-size: 25px;
+
+}
+/* ---------- */
+
+/* FONTS */
+.audiowide-regular {
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+/* ---------- */
+
+/* GENERAL */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+/* ---------- */
+
+/* Cards */
+.box {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 1.05;
+}
+
+.popup {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 95%;
+    height: 75%;
+
+    border-radius: var(--popup-card-radius) 0 0 var(--popup-card-radius);
+    border-width: var(--popup-card-border-width);
+    border-color: var(--popup-card-color);
+    border-style: solid;
+}
+
+.card a {
+    text-shadow: var(--popup-font-shadow);
+    font-family: "Audiowide", sans-serif;
+    color: var(--popup-card-font-color);
+}
+
+/* ---------- */
+
+/* Instagram */
+#ig-box {
+    top: 308px;
+    left: 288px;
+}
+
+#ig-box svg {
+    animation-name: ig-anim;
+    animation-duration: var(--popup-animation-speed);
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ig-anim {
+    0% {
+        rotate: 0;
+    }
+    23% {
+        rotate: -0.00000001deg;
+    }
+    24% {
+        rotate: -30deg;
+    }
+    25% {
+        rotate: 30deg;
+    }
+    26% {
+        rotate:  0.00000001deg;
+    }
+    99% {
+        rotate: 0;
+    }
+}
+
+#ig-popup {
+    width: var(--ig-popup-width);
+    height: var(--ig-popup-height);
+    transform: translateX(calc(var(--ig-popup-width) * -1 + 85px));
+}
+
+#ig-popup-card {
+    animation-name: ig-card-anim;
+    animation-duration: var(--popup-animation-speed);
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    text-align: center;
+}
+
+#ig-popup-card a {
+    font-size: var(--ig-popup-font-size);
+}
+
+@keyframes ig-card-anim {
+    0% {
+        transform: translateX(var(--ig-popup-width));
+    }
+    25% {
+        transform: translateX(var(--ig-popup-width));
+    }
+    30% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(var(--ig-popup-width));
+    }
+}
+/* ---------- */
+
+/* Discord */
+#dc-box {
+    top: 475px;
+    left: 249px;
+}
+
+#dc-box svg {
+    animation-name: dc-anim;
+    animation-duration: var(--popup-animation-speed);
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-delay: var(--popup-animation-delay);
+}
+
+@keyframes dc-anim {
+    0% {
+        rotate: 0;
+    }
+    23% {
+        rotate: -0.00000001deg;
+    }
+    24% {
+        rotate: -30deg;
+    }
+    25% {
+        rotate: 30deg;
+    }
+    26% {
+        rotate:  0.00000001deg;
+    }
+    99% {
+        rotate: 0;
+    }
+}
+
+#dc-popup {
+    width: var(--dc-popup-width);
+    height: var(--dc-popup-height);
+    transform: translateX(calc(var(--dc-popup-width) * -1 + 85px));
+}
+
+#dc-popup-card {
+    animation-name: dc-card-anim;
+    animation-duration: var(--popup-animation-speed);
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-delay: var(--popup-animation-delay);
+}
+
+#dc-popup-card a {
+    font-size: var(--dc-popup-font-size);
+}
+
+@keyframes dc-card-anim {
+    0% {
+        transform: translateX(var(--dc-popup-width));
+    }
+    25% {
+        transform: translateX(var(--dc-popup-width));
+    }
+    30% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(var(--dc-popup-width));
+    }
+}
+/* ---------- */
